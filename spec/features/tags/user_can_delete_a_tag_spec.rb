@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "User can delete a tag" do
   scenario "from tags index" do
-    tag_1 = Tag.create(title: "Initial Follow up")
+    tag_1 = create(:tag)
     tag_2 = create(:tag)
     expect(Tag.count).to eq(2)
 

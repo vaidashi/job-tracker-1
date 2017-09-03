@@ -18,6 +18,21 @@ class TagsController < ApplicationController
     end
   end
 
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
+  def update
+    @tag = Tag.find(params[:id])
+    @tag.update(tag_params)
+    if @tag.save
+      flash[:success] = "#{@tag.title} updated!"
+      redirect_to tags_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     tag = Tag.find(params[:id])
     tag.destroy
