@@ -1,13 +1,27 @@
-Title: <%= @job.title %>
+
+
+
+<strong>Title:</strong> <%= @job.title %>
 <br>
 
-Description: <%= @job.description %>
+<strong>Description:</strong> <%= @job.description %>
 <br>
 
-Level of Interest: <%= @job.level_of_interest %>
+<strong>Level of Interest:</strong> <%= @job.level_of_interest %>
 <br>
 
-City: <%= @job.city %>
+<strong>City:</strong> <%= @job.city %>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<strong>Company:</strong> <%= link_to @job.company.name, company_path(@job.company) %>
+
+<strong>Category:</strong> <%= @job.category.nil? ? "(no category assigned)" :  @job.category.title %>
+
+<br><br>
+
+<h3>Post a Comment</h3>
+<%= render partial: 'comments/form' %>
+
+<br><br>
+<h3>Comments for this position</h3>
+<%= render partial: 'comment' %>

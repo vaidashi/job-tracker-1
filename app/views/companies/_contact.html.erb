@@ -1,0 +1,8 @@
+
+
+<% @company.contacts.each do |contact| %>
+<ul>
+  <li><strong>Name:</strong> <%= contact.full_name %> <br>
+    <strong>Position:</strong>  <%= contact.position %><br> <strong>Email:</strong> <%= contact.email %> </li>
+</ul>
+<% end %>

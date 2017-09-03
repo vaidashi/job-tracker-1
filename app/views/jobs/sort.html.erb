@@ -1,0 +1,5 @@
+All jobs located in <%= @jobs.first.city %>
+
+<% @jobs.each do |job| %>
+  <ul><%= job.title %></ul>
+<% end %>

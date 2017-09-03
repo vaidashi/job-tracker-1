@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
 
+  root 'companies#index'
+
+
+  resources :categories
+
+
+
   resources :companies do
-    resources :jobs
+    resources :contacts
+    resources :jobs do
+      resources :comments
+    end
   end
+
+  get 'jobs' => 'jobs#sort', as: :jobsort
+  get 'dashboard' => 'jobs#dashboard', as: :jobdashboard
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
