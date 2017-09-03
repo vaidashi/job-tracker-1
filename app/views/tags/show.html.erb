@@ -1,0 +1,7 @@
+<h3>All the jobs that have this tag <%= @tag.title %></h3>
+
+<ul>
+  <% @tag.jobs.each do |job| %>
+<li><%= job.title %> with <%= job.company %> </li>
+<% end %> 
+</ul>
