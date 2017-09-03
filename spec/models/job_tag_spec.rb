@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe JobTag, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "assocations" do
+    it { should belong_to(:tag) }
+    it { should belong_to(:job) }
+  end
 end
