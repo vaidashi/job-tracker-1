@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tags
+  
   get 'jobs' => 'jobs#sort', as: :jobsort
   get 'dashboard' => 'jobs#dashboard', as: :jobdashboard
 

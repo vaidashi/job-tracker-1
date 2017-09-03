@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :tag do
-    title "MyString"
+    sequence(:title) do |n|
+      "MyTag#{n}"
+    end
+    
   end
 end
