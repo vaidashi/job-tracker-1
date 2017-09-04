@@ -3,7 +3,6 @@ class ContactsController < ApplicationController
   def create
     @company            = Company.find(params[:company_id])
     @contact            = @company.contacts.new(contact_params)
-    @contact.company_id = params[:company_id]
 
     @contact.save
 

@@ -46,10 +46,11 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @company = Company.find(params[:company_id])
-    @job     = Job.find(params[:id])
-    @job.destroy
-    redirect_to company_jobs_path(@company)
+    company = Company.find(params[:company_id])
+    job      = Job.find(params[:id])
+    job.destroy
+
+    redirect_to company_jobs_path(company)
   end
 
   def sort
